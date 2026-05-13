@@ -1,4 +1,4 @@
-#Burger{
+nav{
     display: none;
 }
 
@@ -6,21 +6,26 @@
     width: 100px;
     height: 40px;
     background-color: black;
-}
-
-li{
     list-style: none;
 }
 
-ul{
+#Burger{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 10px;
 }
 
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 @media (max-width: 576px) {
-    #Burger{
+    nav{
         display: block;
     }
     #navbar{
