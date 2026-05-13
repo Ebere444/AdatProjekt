@@ -137,6 +137,16 @@ img{
     box-shadow: 0 0 0 ;
 }
 
+button{
+    border: 0;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bolder;
+    font-size: large;
+
+}
+
 
 section > div{
     width: 90%;
@@ -148,6 +158,8 @@ section > div{
     border-radius: 10px;
     box-shadow: 3px 3px 6px rgb(187, 187, 187);
 }
+
+
 
 @media (max-width: 576px) {
     #Burger{
@@ -185,6 +197,10 @@ section > div{
     td{
         background-color: rgb(227, 47, 47);
     }
+
+    button{
+        background-color: rgb(227, 47, 47);
+    }
 }
 
 @media (max-width: 768px) and (min-width: 577px) {
@@ -206,6 +222,10 @@ section > div{
     td{
         background-color: rgb(249, 137, 0);
     }
+
+    button{
+        background-color: rgb(249, 137, 0);
+    }
 }   
 
 @media  (min-width: 769px) {
@@ -222,6 +242,10 @@ section > div{
     }
 
     td{
+        background-color: rgb(0, 102, 255);
+    }
+
+    button{
         background-color: rgb(0, 102, 255);
     }
 }
