@@ -85,7 +85,16 @@ section > div{
     #navbar{
         display: none;
     }
-    
+    #Burger.Menu{
+        display: none;
+    }
+    #navbar.Menu{
+        display: flex;
+        
+    }
+    #navbar.Menu > ul{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) and (min-width: 577px) {
