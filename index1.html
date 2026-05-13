@@ -67,7 +67,8 @@
                 <p>A FOREIGN KEY (idegen kulcs) kapcsolatot hoz létre két tábla között.</p>
 
                 <h4>Példa</h4>
-                <pre>CREATE TABLE osztalyok (
+                <pre>
+                CREATE TABLE osztalyok (
                     osztaly_id INT PRIMARY KEY,
                     osztaly_nev VARCHAR(50)
                 );
@@ -94,7 +95,8 @@
                 <p>A UNIQUE korlátozás biztosítja, hogy egy mezőben ne legyen két azonos érték</p>.
 
                 <h4>Példa</h4>
-                <pre>CREATE TABLE felhasznalok (
+                <pre>
+                CREATE TABLE felhasznalok (
                     id INT PRIMARY KEY,
                     email VARCHAR(100) UNIQUE
                 );</pre>
@@ -114,7 +116,8 @@
                 <p>A NOT NULL korlátozás megakadályozza, hogy egy mező üres maradjon.</p>
 
                 <h4>Példa</h4>
-                <pre>CREATE TABLE termekek (
+                <pre>
+                CREATE TABLE termekek (
                     id INT PRIMARY KEY,
                     nev VARCHAR(100) NOT NULL,
                     ar INT
