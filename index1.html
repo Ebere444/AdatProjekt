@@ -1,27 +1,71 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adatbázis bemutató</title>
 </head>
 <body>
-    <main>
-        <header>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+    <header>
+            
+            <h1>MySQL adatbázis-kezelés alapjai</h1>
+
+            <nav id="navbar">
+                <ul>
+                    <li>Korlátozások</li>
+                    <li>Lekérdezések</li>
+                    <li>Összegzés</li>
+                </ul>
+            </nav>
+            
             <div id="Burger">
                 <div id="Vonalak"></div>
                 <div id="Vonalak"></div>
                 <div id="Vonalak"></div>
             </div>
-        </header>
+    </header>
+    <main>
+        
         <section>
+            <h2>Bevezetés</h2>
+
+            <p>A MySQL az egyik legnépszerűbb relációs adatbázis-kezelő rendszer, amelyet weboldalak és alkalmazások adatainak tárolására használnak. Az adatbázisok segítségével rendszerezett módon kezelhetjük az adatokat, valamint gyors lekérdezéseket és módosításokat végezhetünk.</p>
+            <p>Ebben az összefoglalóban bemutatjuk a legfontosabb táblakorlátozásokat és az alapvető SQL lekérdezéstípusokat gyakorlati példák segítségével.</p>
+        </section>
+
+        <section>
+            <h2>1. Táblákban alkalmazható korlátozások</h2>
+
+            <p>A korlátozások (constraints) biztosítják az adatok helyességét és megbízhatóságát az adatbázisban.</p>
+            
+            <div>
+                <h3>PRIMARY KEY</h3>
+                <p>A PRIMARY KEY (elsődleges kulcs) egy olyan mező, amely minden rekordot egyedileg azonosít.</p>
+
+                <h5>Példa:</h5>
+                <pre>
+                CREATE TABLE diakok (
+                    id INT PRIMARY KEY,
+                    nev VARCHAR(100),
+                    eletkor INT
+                );
+                </pre>
+
+                <legend>Magyarázat:</legend>
+                <ul>
+                    <li>Az "id" mező minden rekordnál egyedi lesz.</li>
+                    <li>Nem tartalmazhat ismétlődő vagy NULL értéket.</li>
+                    <li>Egy táblában csak egy PRIMARY KEY lehet.</li>
+                </ul>
+            </div>
+
+            <div>
+
+            </div>
+
 
         </section>
+
     </main>
 </body>
 </html>
