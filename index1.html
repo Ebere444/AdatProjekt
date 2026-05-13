@@ -39,10 +39,11 @@
             <p>A korlátozások (constraints) biztosítják az adatok helyességét és megbízhatóságát az adatbázisban.</p>
             
             <div>
+
                 <h3>PRIMARY KEY</h3>
                 <p>A PRIMARY KEY (elsődleges kulcs) egy olyan mező, amely minden rekordot egyedileg azonosít.</p>
 
-                <h5>Példa:</h5>
+                <h4>Példa:</h4>
                 <pre>
                 CREATE TABLE diakok (
                     id INT PRIMARY KEY,
@@ -51,7 +52,7 @@
                 );
                 </pre>
 
-                <legend>Magyarázat:</legend>
+                <h4>Magyarázat:</h4>
                 <ul>
                     <li>Az "id" mező minden rekordnál egyedi lesz.</li>
                     <li>Nem tartalmazhat ismétlődő vagy NULL értéket.</li>
@@ -61,8 +62,88 @@
 
             <div>
 
+                <h3>FOREIGN KEY</h3>
+
+                <p>A FOREIGN KEY (idegen kulcs) kapcsolatot hoz létre két tábla között.</p>
+
+                <h4>Példa</h4>
+                <pre>CREATE TABLE osztalyok (
+                    osztaly_id INT PRIMARY KEY,
+                    osztaly_nev VARCHAR(50)
+                );
+
+                CREATE TABLE tanulok (
+                    tanulo_id INT PRIMARY KEY,
+                    nev VARCHAR(100),
+                    osztaly_id INT,
+                    FOREIGN KEY (osztaly_id) REFERENCES osztalyok(osztaly_id)
+                );</pre>
+
+                <h4>Magyarázat</h4>
+                <ul>
+                    <li>A tanulok tábla kapcsolódik az osztalyok táblához.</li>
+                    <li>Csak olyan osztaly_id adható meg, amely létezik az osztalyok táblában.</li>
+                    <li>Segít megőrizni az adatok közötti kapcsolatokat.</li>
+                </ul>
+                
             </div>
 
+            <div>
+                <h3>UNIQUE</h3>
+
+                <p>A UNIQUE korlátozás biztosítja, hogy egy mezőben ne legyen két azonos érték.</p>
+
+                <h4>Példa</h4>
+                <pre>CREATE TABLE felhasznalok (
+                    id INT PRIMARY KEY,
+                    email VARCHAR(100) UNIQUE
+                );</pre>
+                
+                <h4>Magyarázat</h4>
+                Két felhasználónak nem lehet ugyanaz az email címe.
+                Az ismétlődő adatok elkerülésére használjuk.
+            </div>
+
+            <div>
+                <h3>UNIQUE</h3>
+
+                <p>A UNIQUE korlátozás biztosítja, hogy egy mezőben ne legyen két azonos érték</p>.
+
+                <h4>Példa</h4>
+                <pre>CREATE TABLE felhasznalok (
+                    id INT PRIMARY KEY,
+                    email VARCHAR(100) UNIQUE
+                );</pre>
+                
+                <h4>Magyarázat</h4>
+
+                <ul>
+                    <li>Két felhasználónak nem lehet ugyanaz az email címe.</li>
+                    <li>Az ismétlődő adatok elkerülésére használjuk.</li>
+                </ul>
+                
+            </div>
+
+            <div>
+                <h3>NOT NULL</h3>
+
+                <p>A NOT NULL korlátozás megakadályozza, hogy egy mező üres maradjon.</p>
+
+                <h4>Példa</h4>
+                <pre>CREATE TABLE termekek (
+                    id INT PRIMARY KEY,
+                    nev VARCHAR(100) NOT NULL,
+                    ar INT
+                );</pre>
+                
+                <h4>Magyarázat</h4>
+                
+                <ul>
+                    <li>A nev mező kitöltése kötelező.</li>
+                    <li>NULL érték nem adható meg.</li>
+                </ul>
+                
+            </div>
 
         </section>
 
