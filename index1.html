@@ -11,17 +11,9 @@
             <h1>MySQL adatbázis-kezelés alapjai</h1>
 
             <nav id="navbar">
-                <ul id="ul">
-                    <li class="li">Korlátozások</li>
-                    <li class="li">Lekérdezések</li>
-                    <li class="li">Összegzés</li>
-                </ul>
             </nav>
             
             <div id="Burger">
-                <div class="Vonalak"></div>
-                <div class="Vonalak"></div>
-                <div class="Vonalak"></div>
             </div>
     </header>
     <main>
@@ -105,26 +97,6 @@
             </div>
 
             <div>
-                <h3>UNIQUE</h3>
-
-                <p>A UNIQUE korlátozás biztosítja, hogy egy mezőben ne legyen két azonos érték</p>.
-
-                <h4>Példa</h4>
-                <pre>CREATE TABLE felhasznalok (
-                    id INT PRIMARY KEY,
-                    email VARCHAR(100) UNIQUE
-                );</pre>
-                
-                <h4>Magyarázat</h4>
-
-                <ul>
-                    <li>Két felhasználónak nem lehet ugyanaz az email címe.</li>
-                    <li>Az ismétlődő adatok elkerülésére használjuk.</li>
-                </ul>
-                
-            </div>
-
-            <div>
                 <h3>NOT NULL</h3>
 
                 <p>A NOT NULL korlátozás megakadályozza, hogy egy mező üres maradjon.</p>
@@ -142,7 +114,15 @@
                     <li>A nev mező kitöltése kötelező.</li>
                     <li>NULL érték nem adható meg.</li>
                 </ul>
-                
+
+                <div>
+
+                    <h3>DEFAULT</h3>
+
+                    <p>A DEFAULT alapértelmezett értéket ad egy mezőnek.</p>
+
+                </div>
+
             </div>
 
         </section>
