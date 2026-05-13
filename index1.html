@@ -12,24 +12,31 @@
 
             <nav id="navbar">
                 <ul id="ul">
-                    <li class="li"><a href="#Bev">Korlátozások</a></li>
-                    <li class="li"><a href="#TAK">Lekérdezések</a></li>
-                    <li class="li"><a href="">Összegzés</a></li>
+                    <li class="li"><a href="#TAK">Korlátozások</a></li>
+                    <li class="li"><a href="#TIP">Lekérdezések</a></li>
+                    <li class="li"><a href="#OSSZ">Összegzés</a></li>
                 </ul>
             </nav>
             
             <div id="Burger">
+                <div class="Vonalak"></div>
+                <div class="Vonalak"></div>
+                <div class="Vonalak"></div>
             </div>
     </header>
     <main>
-        
         <section>
-            <h2 id="Bev">Bevezetés</h2>
 
-            <p>A MySQL az egyik legnépszerűbb relációs adatbázis-kezelő rendszer, amelyet weboldalak és alkalmazások adatainak tárolására használnak. Az adatbázisok segítségével rendszerezett módon kezelhetjük az adatokat, valamint gyors lekérdezéseket és módosításokat végezhetünk.</p>
+        
+            
+            <img src="sql.png" alt="">
+
+            <p>A <b>MySQL</b> az egyik legnépszerűbb relációs adatbázis-kezelő rendszer, amelyet weboldalak és alkalmazások adatainak tárolására használnak. Az adatbázisok segítségével rendszerezett módon kezelhetjük az adatokat, valamint gyors lekérdezéseket és módosításokat végezhetünk.</p>
+
             <p>Ebben az összefoglalóban bemutatjuk a legfontosabb táblakorlátozásokat és az alapvető SQL lekérdezéstípusokat gyakorlati példák segítségével.</p>
+            
         </section>
-
+           
         <section>
             <h2 id="TAK">1. Táblákban alkalmazható korlátozások</h2>
 
@@ -74,7 +81,8 @@
                     tanulo_id INT PRIMARY KEY,
                     nev VARCHAR(100),
                     osztaly_id INT,
-                    FOREIGN KEY (osztaly_id) REFERENCES osztalyok(osztaly_id)
+                    FOREIGN KEY (osztaly_id) 
+                    REFERENCES osztalyok(osztaly_id)
                 );</pre>
 
                 <h4>Magyarázat</h4>
@@ -137,7 +145,8 @@
                 <h4>Példa</h4>
                 <pre>CREATE TABLE rendelesek (
                     id INT PRIMARY KEY,
-                    statusz VARCHAR(50) DEFAULT 'Feldolgozás alatt'
+                    statusz VARCHAR(50) 
+                    DEFAULT 'Feldolgozás alatt'
                 );</pre>
                 <h4>Magyarázat</h4>
                 <ul> 
@@ -168,7 +177,7 @@
         </section>
 
         <section>
-            <h2>2. A lekérdezések típusai</h2>
+            <h2 id="TIP">2. A lekérdezések típusai</h2>
 
             <p>Az SQL nyelv segítségével adatokat vihetünk be, lekérdezhetünk, módosíthatunk és törölhetünk.</p>
 
@@ -229,7 +238,7 @@
 
             <div>
 
-                <h3>>Adattörlés – DELETE</h3>
+                <h3>Adattörlés – DELETE</h3>
 
                 <p>A DELETE rekordok törlésére használható.</p>
 
@@ -249,12 +258,12 @@
 
         <section>
             
-            <h2>Összegzés</h2>
+            <h2 id="OSSZ">Összegzés</h2>
 
             
             <p>A MySQL adatbázis-kezelés alapját a megfelelően kialakított táblák és az SQL lekérdezések adják. A különböző korlátozások segítenek az adatok pontosságának megőrzésében, míg az SQL utasítások lehetővé teszik az adatok kezelését.</p>
             
-            <div>
+            <div id="TBDiv">
                 <table>
                     <tr>
                         <td colspan="2">
@@ -330,6 +339,10 @@
         </section>
 
     </main>
+
+    <footer>
+        <p>Készítette: Solomon Eberenna, Dancza Milán</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
