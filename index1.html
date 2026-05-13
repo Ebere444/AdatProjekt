@@ -115,16 +115,206 @@
                     <li>NULL érték nem adható meg.</li>
                 </ul>
 
-                <div>
+            </div>
 
-                    <h3>DEFAULT</h3>
+            <div>
 
-                    <p>A DEFAULT alapértelmezett értéket ad egy mezőnek.</p>
+                <h3>DEFAULT</h3>
+                <p>A DEFAULT alapértelmezett értéket ad egy mezőnek.</p>
 
-                </div>
+                <h4>Példa</h4>
+                <pre>CREATE TABLE rendelesek (
+                    id INT PRIMARY KEY,
+                    statusz VARCHAR(50) DEFAULT 'Feldolgozás alatt'
+                );</pre>
+                <h4>Magyarázat</h4>
+                <ul> 
+                    <li>Ha a statusz mező nincs megadva, automatikusan a „Feldolgozás alatt” értéket kapja.</li>
+                </ul>
+            </div>
+
+            <div>
+                
+                <h3>CHECK</h3>
+
+                <p>A CHECK korlátozás feltételt ad meg az adatokra.</p>
+
+                <h4>Példa</h4>
+                <pre>CREATE TABLE dolgozok (
+                    id INT PRIMARY KEY,
+                    nev VARCHAR(100),
+                    fizetes INT CHECK (fizetes > 0)
+                );</pre>
+
+                <h4>Magyarázat</h4>
+
+                <ul>
+                    <li>A fizetés csak pozitív szám lehet.</li>
+                    <li>Hibás adatbevitel esetén a rendszer hibát jelez.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. A lekérdezések típusai</h2>
+
+            <p>Az SQL nyelv segítségével adatokat vihetünk be, lekérdezhetünk, módosíthatunk és törölhetünk.</p>
+
+            <div>
+
+                <h3>Adatbevitel – INSERT</h3>
+
+                <p>Az INSERT utasítás új rekordok hozzáadására szolgál.</p>
+
+                <h4>Példa</h4>
+                <pre>INSERT INTO diakok (id, nev, eletkor)
+                VALUES (1, 'Kiss Péter', 18);</pre>
+
+                <h4>Magyarázat</h4>
+                <ul>
+                    <li>Új sort adunk hozzá a diakok táblához.</li>
+                    <li>Az értékek sorrendje megegyezik az oszlopok sorrendjével.</li>
+                </ul>
+                
+            </div>
+
+            <div>
+                <h3>Adatlekérdezés – SELECT</h3>
+
+                <p>A SELECT utasítással adatokat kérdezhetünk le.</p>
+
+                <h4>Példa</h4>
+                <pre>SELECT * FROM diakok;
+                Magyarázat
+                A * az összes oszlopot jelenti.
+                A lekérdezés minden rekordot megjelenít.
+                Feltételes lekérdezés
+                SELECT nev, eletkor
+                FROM diakok
+                WHERE eletkor >= 18;</pre>
+
+                <h4>Magyarázat</h4>
+                <ul>
+                    <li>Csak a 18 éves vagy idősebb diákokat jeleníti meg.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Adatmódosítás – UPDATE</h3>
+
+                <p>Az UPDATE meglévő adatok módosítására szolgál.</p>
+
+                <h4>Példa</h4>
+                <pre>UPDATE diakok
+                SET eletkor = 19
+                WHERE id = 1;</pre>
+                <h4>Magyarázat</h4>
+                <ul>
+                    <li>Az id = 1 rekord életkorát 19-re módosítjuk.</li>
+                    <li></li>A WHERE feltétel nagyon fontos, különben minden rekord módosulhat.</ul>
+                
+            </div>
+
+            <div>
+
+                <h3>>Adattörlés – DELETE</h3>
+
+                <p>A DELETE rekordok törlésére használható.</p>
+
+                <h4>Példa</h4>
+                <pre>DELETE FROM diakok
+                WHERE id = 1;</pre>
+                
+                <h4>Magyarázat</h4>
+
+                <ul>
+                    <li>Törli azt a rekordot, amelynek azonosítója 1.</li>
+                </ul>
 
             </div>
 
+        </section>
+
+        <section>
+            
+            <h2>Összegzés</h2>
+
+            
+            <p>A MySQL adatbázis-kezelés alapját a megfelelően kialakított táblák és az SQL lekérdezések adják. A különböző korlátozások segítenek az adatok pontosságának megőrzésében, míg az SQL utasítások lehetővé teszik az adatok kezelését.</p>
+            
+            <div>
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            A legfontosabb műveletek:
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PRIMARY KEY</td>
+                        <td>egyedi azonosítás</td>
+                    </tr>
+
+                    <tr>
+                        <td>FOREIGN KEY</td>
+                        <td>kapcsolatok létrehozása</td>
+                    </tr>
+
+                    <tr>
+                        <td>UNIQUE</td>
+                        <td>ismétlődés tiltása</td>
+                    </tr>
+
+                    <tr>
+                        <td>NOT NUL</td>
+                        <td>kötelező mező</td>
+                    </tr>
+
+                    <tr>
+                        <td>DEFAULT</td>
+                        <td>alapértelmezett érték</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>CHECK</td>
+                        <td>feltételek ellenőrzése</td>
+                    </tr>
+                    
+                </table>
+
+                <table>
+
+                    <tr>
+                        <td colspan="2">SQL műveletek:</td>
+                    </tr>
+
+                <tr>
+                    <td>INSERT</td>
+                    <td>adatbevitel</td>
+                </tr>
+
+                <tr>
+                    <td>SELECT</td>
+                    <td>adatlekérdezés</td>
+                </tr>
+
+                <tr>
+                    <td>UPDATE</td>
+                    <td>adatmódosítás</td>
+                </tr>
+
+                <tr>
+                    <td>DELETE</td>
+                    <td>adattörlés</td>
+                </tr> 
+                </table>
+                
+
+                 
+                
+                 
+                 
+            </div>
         </section>
 
     </main>
