@@ -1,18 +1,27 @@
-nav{
-    display: none;
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .Vonalak{
-    width: 100px;
-    height: 40px;
+    width: 50px;
+    height: 10px;
     background-color: black;
-    list-style: none;
+    
 }
 
 #Burger{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    display: none;
+    
+}
+
+#navbar > ul >li{
+    list-style: none;
+    
+}
+
+#navbar > ul{
     gap: 10px;
 }
 
@@ -25,8 +34,11 @@ header{
 }
 
 @media (max-width: 576px) {
-    nav{
-        display: block;
+    #Burger{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 7px;
     }
     #navbar{
         display: none;
