@@ -11,6 +11,11 @@
             <h1>MySQL adatbázis-kezelés alapjai</h1>
 
             <nav id="navbar">
+                <ul id="ul">
+                    <li class="li"><a href="#Bev">Korlátozások</a></li>
+                    <li class="li"><a href="#TAK">Lekérdezések</a></li>
+                    <li class="li"><a href="">Összegzés</a></li>
+                </ul>
             </nav>
             
             <div id="Burger">
@@ -19,14 +24,14 @@
     <main>
         
         <section>
-            <h2>Bevezetés</h2>
+            <h2 id="Bev">Bevezetés</h2>
 
             <p>A MySQL az egyik legnépszerűbb relációs adatbázis-kezelő rendszer, amelyet weboldalak és alkalmazások adatainak tárolására használnak. Az adatbázisok segítségével rendszerezett módon kezelhetjük az adatokat, valamint gyors lekérdezéseket és módosításokat végezhetünk.</p>
             <p>Ebben az összefoglalóban bemutatjuk a legfontosabb táblakorlátozásokat és az alapvető SQL lekérdezéstípusokat gyakorlati példák segítségével.</p>
         </section>
 
         <section>
-            <h2>1. Táblákban alkalmazható korlátozások</h2>
+            <h2 id="TAK">1. Táblákban alkalmazható korlátozások</h2>
 
             <p>A korlátozások (constraints) biztosítják az adatok helyességét és megbízhatóságát az adatbázisban.</p>
             
@@ -59,7 +64,8 @@
                 <p>A FOREIGN KEY (idegen kulcs) kapcsolatot hoz létre két tábla között.</p>
 
                 <h4>Példa</h4>
-                <pre>CREATE TABLE osztalyok (
+                <pre>
+                CREATE TABLE osztalyok (
                     osztaly_id INT PRIMARY KEY,
                     osztaly_nev VARCHAR(50)
                 );
@@ -83,17 +89,22 @@
             <div>
                 <h3>UNIQUE</h3>
 
-                <p>A UNIQUE korlátozás biztosítja, hogy egy mezőben ne legyen két azonos érték.</p>
+                <p>A UNIQUE korlátozás biztosítja, hogy egy mezőben ne legyen két azonos érték</p>.
 
                 <h4>Példa</h4>
-                <pre>CREATE TABLE felhasznalok (
+                <pre>
+                CREATE TABLE felhasznalok (
                     id INT PRIMARY KEY,
                     email VARCHAR(100) UNIQUE
                 );</pre>
                 
                 <h4>Magyarázat</h4>
-                Két felhasználónak nem lehet ugyanaz az email címe.
-                Az ismétlődő adatok elkerülésére használjuk.
+
+                <ul>
+                    <li>Két felhasználónak nem lehet ugyanaz az email címe.</li>
+                    <li>Az ismétlődő adatok elkerülésére használjuk.</li>
+                </ul>
+                
             </div>
 
             <div>
@@ -102,7 +113,8 @@
                 <p>A NOT NULL korlátozás megakadályozza, hogy egy mező üres maradjon.</p>
 
                 <h4>Példa</h4>
-                <pre>CREATE TABLE termekek (
+                <pre>
+                CREATE TABLE termekek (
                     id INT PRIMARY KEY,
                     nev VARCHAR(100) NOT NULL,
                     ar INT
@@ -318,5 +330,6 @@
         </section>
 
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

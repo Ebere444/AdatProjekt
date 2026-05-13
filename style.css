@@ -11,26 +11,68 @@
     
 }
 
+.li{
+    list-style: none;
+}
+
 #Burger{
     display: none;
     
 }
 
-#navbar > ul >li{
-    list-style: none;
-    
+#navbar{
+    padding: 15px;
 }
 
-#navbar > ul{
+#ul{
     gap: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: large;
 }
 
 header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 15px;
+}
+
+section{
+    width: 60vw;
+    font-size: larger;
+    background-color: aqua;
+    margin: 0 auto 0 auto;
     padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+h2 ~ p{
+    text-align: center;
+}
+
+ul{
+    padding-left: 40px;
+}
+
+
+
+section > div{
+    width: 80%;
+    background-color: beige;
+    margin: 10px;
+    margin: 0 auto 0 auto;
+    margin-top: 20px;
+    padding: 5px;
 }
 
 @media (max-width: 576px) {
@@ -43,7 +85,16 @@ header{
     #navbar{
         display: none;
     }
-    
+    #Burger.Menu{
+        display: none;
+    }
+    #navbar.Menu{
+        display: flex;
+        
+    }
+    #navbar.Menu > ul{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) and (min-width: 577px) {
